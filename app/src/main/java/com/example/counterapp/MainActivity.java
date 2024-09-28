@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter;
+    Button btn, btn_converter, btn_converter_clear, btn_dec;
     int counter = 0;
 
 
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         unitconverter_text = findViewById(R.id.unitconverter_text);
         btn_converter = findViewById(R.id.btn_converter);
         convertertext = findViewById(R.id.convertertext);
+        btn_converter_clear = findViewById(R.id.btn_converter_clear);
+        btn_dec = findViewById(R.id.btn_dec);
 
         //Add Functionality
         btn.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(""+increaseCounter());
             }
         });
+
+        btn_dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText(""+decreaseCounter());
+            }
+        });
+
 
         btn_converter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,11 +75,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        btn_converter_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                convertertext.setText("");
+            }
+        });
+
+
 
         }
 
     public int increaseCounter() {
         return ++counter;
+    }
+
+    public int decreaseCounter() {
+        return --counter;
     }
 
     public double makeConversion(double kilos){
