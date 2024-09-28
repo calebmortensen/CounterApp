@@ -1,22 +1,21 @@
 package com.example.counterapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter, btn_converter_clear, btn_dec;
+    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg;
     int counter = 0;
 
 
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         convertertext = findViewById(R.id.convertertext);
         btn_converter_clear = findViewById(R.id.btn_converter_clear);
         btn_dec = findViewById(R.id.btn_dec);
+        nvg = findViewById(R.id.nvg);
 
         //Add Functionality
         btn.setOnClickListener(new View.OnClickListener() {
@@ -61,19 +61,24 @@ public class MainActivity extends AppCompatActivity {
         btn_converter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Gets user input (kilos)
-            String inputText = convertertext.getText().toString();
 
-            //Convert String to double
-            double kilos = Double.parseDouble(inputText);
+                    //Gets user input (kilos)
+                    String inputText = convertertext.getText().toString();
 
-            //Convert Kilos to pounds
-            double pounds = makeConversion(kilos);
+                    //Convert String to double
+                    double kilos = Double.parseDouble(inputText);
 
-            //Display the conversion result
-                convertertext.setText("" + pounds);
+                    //Convert Kilos to pounds
+                    double pounds = makeConversion(kilos);
 
-            }
+                    //Display the conversion result
+                    convertertext.setText("" + pounds);
+
+                    //ACTION ITEM: Need to account for Non-Digits & Empty space for APP CRASH
+                }
+
+
+
         });
         btn_converter_clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,9 +87,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        nvg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSecondActivity();
+            }
+        });
 
         }
+
+      
 
     public int increaseCounter() {
         return ++counter;
@@ -95,11 +107,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public double makeConversion(double kilos){
-
         // 1 kilo = 2.20462 pounds
-
         return kilos * 2.20462;
     }
 
+    public void goToSecondActivity(){
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
 
     }

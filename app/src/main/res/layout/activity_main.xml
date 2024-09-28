@@ -32,12 +32,12 @@
         android:layout_marginStart="73dp"
         android:layout_marginTop="51dp"
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="335dp"
+        android:layout_marginBottom="418dp"
         android:text="The Counter App"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_converter_clear"
+        app:layout_constraintBottom_toTopOf="@+id/nvg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +87,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter Kilos"
+        android:hint="Enter Kilo"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_on_primary"
         android:textSize="25dp"
@@ -111,6 +111,7 @@
         app:layout_constraintStart_toStartOf="@+id/convertertext"
         app:layout_constraintTop_toBottomOf="@+id/convertertext" />
 
+
     <Button
         android:id="@+id/btn_converter_clear"
         android:layout_width="101dp"
@@ -122,8 +123,20 @@
         android:text="Clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_converter"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="@+id/btn_converter"
+        app:layout_constraintTop_toBottomOf="@+id/counter_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/nvg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="168dp"
+        android:text="Navigate to Second Activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/counter_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
