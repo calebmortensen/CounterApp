@@ -3,6 +3,7 @@ package com.example.counterapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView, counter_text, convertertext, unitconverter_text;
+    EditText convertertext;
+    TextView textView, counter_text, unitconverter_text;
     Button btn, btn_converter;
     int counter = 0;
 
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             double pounds = makeConversion(kilos);
 
             //Display the conversion result
-                textView.setText("" + pounds);
+                convertertext.setText("" + pounds);
 
             }
         });
