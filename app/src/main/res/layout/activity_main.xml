@@ -27,12 +27,12 @@
 
     <TextView
         android:id="@+id/counter_text"
-        android:layout_width="0dp"
+        android:layout_width="273dp"
         android:layout_height="0dp"
         android:layout_marginStart="73dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="486dp"
+        android:layout_marginBottom="466dp"
         android:text="The Counter App"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -136,18 +136,22 @@
         android:text="Navigate to Second Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text" />
+        app:layout_constraintTop_toBottomOf="@+id/counter_text"
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/openBrowser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="122dp"
         android:text="Go to Google"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nvg"
+        app:layout_constraintStart_toStartOf="@+id/convertertext"
         app:layout_constraintTop_toBottomOf="@+id/counter_text" />
 
 
