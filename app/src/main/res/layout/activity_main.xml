@@ -32,12 +32,12 @@
         android:layout_marginStart="73dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="466dp"
+        android:layout_marginBottom="581dp"
         android:text="The Counter App"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/openBrowser"
+        app:layout_constraintBottom_toTopOf="@+id/justAbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,10 +63,10 @@
         android:text="Down"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toEndOf="@+id/btn"
         app:layout_constraintTop_toBottomOf="@+id/counter_text"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <TextView
         android:id="@+id/unitconverter_text"
@@ -154,5 +154,17 @@
         app:layout_constraintStart_toStartOf="@+id/convertertext"
         app:layout_constraintTop_toBottomOf="@+id/counter_text" />
 
+    <Button
+        android:id="@+id/justAbutton"
+        android:layout_width="193dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:text="Just a button"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ public class ThirdActivity extends AppCompatActivity {
 
         //How to receive (GET) data from Second Activity from putExtra Method
         Intent i = getIntent();
-        String userName = i.getStringExtra("name");
+        String username = i.getStringExtra("name");
 
         int random_num = generateRandomNumber();
         numberOutput.setText(""+random_num);
@@ -45,7 +45,7 @@ public class ThirdActivity extends AppCompatActivity {
         share_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shareData(userName, random_num);
+                shareData(username, random_num);
             }
         });
 
