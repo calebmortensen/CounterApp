@@ -2,6 +2,7 @@ package com.example.counterapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg;
+    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser;
     int counter = 0;
 
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btn_converter_clear = findViewById(R.id.btn_converter_clear);
         btn_dec = findViewById(R.id.btn_dec);
         nvg = findViewById(R.id.nvg);
+        openBrowser = findViewById(R.id.openBrowser);
 
         //Add Functionality
         btn.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +96,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        openBrowser.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                openWebPage();
+            }
+        });
+
         }
 
       
@@ -113,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToSecondActivity(){
         Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+    public void openWebPage(){
+        Uri webpage = Uri.parse("https://www.gogle.com");
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
         startActivity(intent);
     }
 
