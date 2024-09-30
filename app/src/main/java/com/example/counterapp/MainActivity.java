@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView, counter_text, unitconverter_text;
     Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser;
     int counter = 0;
-
 
 
     @Override
@@ -48,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            textView.setText(""+increaseCounter());
+                textView.setText("" + increaseCounter());
             }
         });
 
         btn_dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(""+decreaseCounter());
+                textView.setText("" + decreaseCounter());
             }
         });
 
@@ -64,21 +66,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    //Gets user input (kilos)
-                    String inputText = convertertext.getText().toString();
+                //Gets user input (kilos)
+                String inputText = convertertext.getText().toString();
 
-                    //Convert String to double
-                    double kilos = Double.parseDouble(inputText);
+                //Convert String to double
+                double kilos = Double.parseDouble(inputText);
 
-                    //Convert Kilos to pounds
-                    double pounds = makeConversion(kilos);
+                //Convert Kilos to pounds
+                double pounds = makeConversion(kilos);
 
-                    //Display the conversion result
-                    convertertext.setText("" + pounds);
+                //Display the conversion result
+                convertertext.setText("" + pounds);
 
-                    //ACTION ITEM: Need to account for Non-Digits & Empty space for APP CRASH
-                }
-
+                //ACTION ITEM: Need to account for Non-Digits & Empty space for APP CRASH
+            }
 
 
         });
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        openBrowser.setOnClickListener(new View.OnClickListener(){
+        openBrowser.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -106,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-      
 
     public int increaseCounter() {
         return ++counter;
@@ -116,19 +116,36 @@ public class MainActivity extends AppCompatActivity {
         return --counter;
     }
 
-    public double makeConversion(double kilos){
+    public double makeConversion(double kilos) {
         // 1 kilo = 2.20462 pounds
         return kilos * 2.20462;
     }
 
-    public void goToSecondActivity(){
+    public void goToSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
-    public void openWebPage(){
+
+    public void openWebPage() {
         Uri webpage = Uri.parse("https://www.gogle.com");
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
         startActivity(intent);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my_menu, menu);
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_home) {
+            Toast.makeText(this, "You selected Home", Toast.LENGTH_SHORT).show();
+        } else if (itemId == R.id.action_search) {
+            Toast.makeText(this, "You selected Search", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
