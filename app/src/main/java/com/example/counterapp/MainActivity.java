@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser;
+    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser, nvgFourth;
     int counter = 0;
     CheckBox checkBox;
     RadioGroup radioGroup;
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         openBrowser = findViewById(R.id.openBrowser);
         checkBox = findViewById(R.id.checkbox);
         radioGroup = findViewById(R.id.radioGroup);
-       // radioButton =findViewById(R.id.radioButton1);
+        nvgFourth = findViewById(R.id.nvgFourth);
+
 
 
 
@@ -109,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        nvgFourth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToFourthActivity();
+            }
+        });
+
         openBrowser.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -160,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToFourthActivity() {
+        Intent intent = new Intent(this, FourthActivity.class);
         startActivity(intent);
     }
 

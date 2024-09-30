@@ -32,14 +32,15 @@
         android:layout_height="0dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="401dp"
+        android:layout_marginBottom="547dp"
         android:text="App Training"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/nvg4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/btn"
@@ -51,8 +52,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_dec"
         app:layout_constraintEnd_toStartOf="@+id/btn_dec"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_dec"
@@ -132,6 +133,20 @@
         app:layout_constraintTop_toBottomOf="@+id/justAbutton" />
 
     <Button
+        android:id="@+id/nvgFourth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="75dp"
+        android:text="Navigate to Fourth Activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nvg"
+        app:layout_constraintTop_toBottomOf="@+id/counter_text"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
         android:id="@+id/openBrowser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -174,15 +189,16 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="132dp"
+        android:layout_height="116dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="153dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/justAbutton"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text">
+        app:layout_constraintTop_toBottomOf="@+id/counter_text"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
             android:id="@+id/radioButton1"
@@ -192,9 +208,10 @@
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="94dp"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:text="Cheese" />
     </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
