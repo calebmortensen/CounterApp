@@ -13,158 +13,145 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="147dp"
+        android:layout_width="113dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="87dp"
         android:text="0"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dec"
+        app:layout_constraintEnd_toEndOf="@+id/counter_text"
+        app:layout_constraintStart_toStartOf="@+id/unitconverter_text"
         app:layout_constraintTop_toBottomOf="@+id/counter_text" />
 
     <TextView
         android:id="@+id/counter_text"
-        android:layout_width="273dp"
+        android:layout_width="275dp"
         android:layout_height="0dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="581dp"
-        android:text="The Counter App"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="11dp"
+        android:text="App Training"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/justAbutton"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="91dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="39dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginEnd="32dp"
         android:text="Up"
-        app:layout_constraintBottom_toTopOf="@+id/unitconverter_text"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_dec"
+        app:layout_constraintEnd_toStartOf="@+id/btn_dec"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
     <Button
         android:id="@+id/btn_dec"
-        android:layout_width="91dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="514dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="7dp"
         android:text="Down"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/unitconverter_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toEndOf="@+id/btn"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/unitconverter_text"
-        android:layout_width="267dp"
+        android:layout_width="256dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="54dp"
         android:text="Unit Converter"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_on_primary"
+        android:textColor="@color/sky_blue"
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/convertertext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dec" />
 
     <EditText
         android:id="@+id/convertertext"
-        android:layout_width="0dp"
+        android:layout_width="214dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:hint="Enter Kilo"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_on_primary"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_converter"
-        app:layout_constraintEnd_toEndOf="@+id/unitconverter_text"
-        app:layout_constraintStart_toStartOf="@+id/unitconverter_text"
+        app:layout_constraintBottom_toTopOf="@+id/btn_converter_clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/unitconverter_text" />
 
     <Button
         android:id="@+id/btn_converter"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="301dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="33dp"
         android:background="@color/design_default_color_surface"
         android:text="Convert KG to LBS"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/convertertext"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/convertertext"
-        app:layout_constraintTop_toBottomOf="@+id/convertertext" />
-
+        app:layout_constraintEnd_toStartOf="@+id/btn_converter_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
 
     <Button
         android:id="@+id/btn_converter_clear"
-        android:layout_width="101dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="245dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="35dp"
         android:background="@color/design_default_color_surface"
         android:text="Clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_converter"
-        app:layout_constraintHorizontal_bias="0.575"
-        app:layout_constraintStart_toStartOf="@+id/btn_converter"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/openBrowser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_converter"
+        app:layout_constraintTop_toBottomOf="@+id/convertertext" />
 
     <Button
         android:id="@+id/nvg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="16dp"
         android:text="Navigate to Second Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintTop_toBottomOf="@+id/justAbutton" />
 
     <Button
         android:id="@+id/openBrowser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="122dp"
+        android:layout_marginStart="12dp"
         android:text="Go to Google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nvg"
-        app:layout_constraintStart_toStartOf="@+id/convertertext"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text" />
+        app:layout_constraintBottom_toTopOf="@+id/justAbutton"
+        app:layout_constraintStart_toStartOf="@+id/justAbutton"
+        app:layout_constraintTop_toBottomOf="@+id/btn_converter_clear" />
 
     <Button
         android:id="@+id/justAbutton"
         android:layout_width="193dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="87dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="158dp"
         android:background="@drawable/rounded_button"
         android:text="Just a button"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/counter_text" />
+        app:layout_constraintBottom_toTopOf="@+id/nvg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openBrowser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

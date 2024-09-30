@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CounterApp</string>
+
+    <string name="YourLuckyNumberText">Your Lucky Number is: </string>
 </resources>
