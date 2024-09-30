@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser;
     int counter = 0;
     CheckBox checkBox;
+    RadioGroup radioGroup;
+   // RadioButton radioButton;
 
 
     @Override
@@ -49,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         nvg = findViewById(R.id.nvg);
         openBrowser = findViewById(R.id.openBrowser);
         checkBox = findViewById(R.id.checkbox);
+        radioGroup = findViewById(R.id.radioGroup);
+       // radioButton =findViewById(R.id.radioButton1);
+
+
 
         //Add Functionality
         btn.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +127,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Not Checked", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+            radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = findViewById(checkedId);
+                Toast.makeText(MainActivity.this, "You Selected: "+radioButton.getText().toString(),
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
