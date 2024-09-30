@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView, counter_text, unitconverter_text;
     Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser;
     int counter = 0;
+    CheckBox checkBox;
 
 
     @Override
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btn_dec = findViewById(R.id.btn_dec);
         nvg = findViewById(R.id.nvg);
         openBrowser = findViewById(R.id.openBrowser);
+        checkBox = findViewById(R.id.checkbox);
 
         //Add Functionality
         btn.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +109,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, "Checked", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Not Checked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
     }
+
 
 
     public int increaseCounter() {
@@ -148,4 +168,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
