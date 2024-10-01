@@ -1,7 +1,10 @@
 package com.example.counterapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -17,6 +20,7 @@ public class FourthActivity extends AppCompatActivity {
 
   Spinner spinner;
   TimePicker timePicker;
+  Button nvgFifth;
 
 
     @Override
@@ -52,15 +56,33 @@ public class FourthActivity extends AppCompatActivity {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 //Handle Time Change
-                Toast.makeText(FourthActivity.this, "Hour: "+ hourOfDay+ " minute " +minute, Toast.LENGTH_LONG).show();
+                Toast.makeText(FourthActivity.this, "Hour: " + hourOfDay + " minute " + minute, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        nvgFifth = findViewById(R.id.nvgFifth);
+        nvgFifth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToFifthActivity();
             }
         });
 
 
-
-
-
-
-
     }
+    public void goToFifthActivity() {
+        Intent intent = new Intent(this, FifthActivity.class);
+        startActivity(intent);
+    }
+
+
 }
+
+
+
+
+
+
+
+
+

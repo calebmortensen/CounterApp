@@ -29,16 +29,17 @@
     <TextView
         android:id="@+id/counter_text"
         android:layout_width="275dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="547dp"
         android:text="App Training"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/nvg4"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
