@@ -13,11 +13,12 @@
         android:layout_width="375dp"
         android:layout_height="0dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="117dp"
-        app:layout_constraintBottom_toTopOf="@+id/dateBtn"
+        android:layout_marginBottom="215dp"
+        app:layout_constraintBottom_toTopOf="@+id/nvgToSixth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/dateBtn"
@@ -27,6 +28,22 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="114dp"
         android:text="Display Selected Text"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/nvgToSixth"
+        android:layout_width="350dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="16dp"
+        android:text="Nav to 6th"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

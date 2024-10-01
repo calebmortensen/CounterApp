@@ -1,5 +1,6 @@
 package com.example.counterapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class FifthActivity extends AppCompatActivity {
 
     DatePicker datePicker;
-    Button dateBtn;
+    Button dateBtn, nvgToSixth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +36,24 @@ public class FifthActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String day = "Day " + datePicker.getDayOfMonth();
-                String month = "Month " + datePicker.getMonth();
+                String month = "Month " + (datePicker.getMonth()+1);
                 String year = "Year " + datePicker.getYear();
 
                 Toast.makeText(FifthActivity.this, day + " " + month + " " + year, Toast.LENGTH_LONG).show();
             }
         });
+        nvgToSixth = findViewById(R.id.nvgToSixth);
+        nvgToSixth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSixthActivity();
+            }
+        });
 
     }
-
+    public void goToSixthActivity() {
+        Intent intent = new Intent(this, SixthActivity.class);
+        startActivity(intent);
+    }
 
 }
