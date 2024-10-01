@@ -1,6 +1,9 @@
 package com.example.counterapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SixthActivity extends AppCompatActivity {
+
+    Button progressBtn;
+    ProgressBar progressBar;
+    int progress = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +28,20 @@ public class SixthActivity extends AppCompatActivity {
             return insets;
         });
 
+        progressBar = findViewById(R.id.progressBar);
+        progressBtn = findViewById(R.id.progressBtn);
 
 
 
+        progressBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress = progress + 10;
+
+                progressBar.setProgress(progress);
+
+            }
+        });
 
 
     }
