@@ -3,6 +3,9 @@ package com.example.counterapp;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -13,6 +16,7 @@ public class FourthActivity extends AppCompatActivity {
 
 
   Spinner spinner;
+  TimePicker timePicker;
 
 
     @Override
@@ -40,6 +44,20 @@ public class FourthActivity extends AppCompatActivity {
         //apply adapter to spinner
 
         spinner.setAdapter(adapter);
+
+
+
+        timePicker = findViewById(R.id.timePicker);
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                //Handle Time Change
+                Toast.makeText(FourthActivity.this, "Hour: "+ hourOfDay+ " minute " +minute, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
 
 
 
