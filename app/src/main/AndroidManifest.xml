@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CounterApp"
         tools:targetApi="31">
         <activity
+            android:name=".EighthActivity"
+            android:exported="false" />
+        <activity
             android:name=".SeventhActivity"
             android:exported="false" />
         <activity

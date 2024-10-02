@@ -1,5 +1,6 @@
 package com.example.counterapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SeventhActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button blackBtn, greenBtn, purpleBtn, redBtn, yellowBtn;
+    Button blackBtn, greenBtn, purpleBtn, redBtn, yellowBtn, nvgEighth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class SeventhActivity extends AppCompatActivity implements View.OnClickLi
         purpleBtn = findViewById(R.id.purpleBtn);
         redBtn = findViewById(R.id.redBtn);
         yellowBtn = findViewById(R.id.yellowBtn);
+        nvgEighth = findViewById(R.id.nvgEighth);
 
         redBtn.setOnClickListener(this);
         blackBtn.setOnClickListener(this);
@@ -37,6 +39,12 @@ public class SeventhActivity extends AppCompatActivity implements View.OnClickLi
         purpleBtn.setOnClickListener(this);
         greenBtn.setOnClickListener(this);
 
+        nvgEighth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToEighthActivity();
+            }
+        });
 
     }
 
@@ -65,5 +73,12 @@ public class SeventhActivity extends AppCompatActivity implements View.OnClickLi
         );
         mediaPlayer.start();
 
+    }
+
+
+
+    public void goToEighthActivity() {
+        Intent intent = new Intent(this, EighthActivity.class);
+        startActivity(intent);
     }
 }
