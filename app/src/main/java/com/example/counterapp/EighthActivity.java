@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class EighthActivity extends AppCompatActivity {
 
     ListView listview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +32,15 @@ public class EighthActivity extends AppCompatActivity {
 
 
         //3. Adapter: acts as a bridge between the 'data source' and the 'AdapterView'
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+       /* ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 countries
-        );
+        );*/
+        MyCustomAdapter adapter = new MyCustomAdapter(this, countries);
+
+
+
         //Link Listview with the Adapter
         listview.setAdapter(adapter);
     }
