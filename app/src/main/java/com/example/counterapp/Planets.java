@@ -1,7 +1,11 @@
 package com.example.counterapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
@@ -19,7 +23,7 @@ public class Planets extends AppCompatActivity {
 
 
         //1 AdapterView : a ListView
-        listView = findViewById(R.id.listview);
+        listView = findViewById(R.id.planet_layout);
 
         //2 Data Source: ArrayList<Planet>
         planetsArrayList = new ArrayList<>();
@@ -48,7 +52,18 @@ public class Planets extends AppCompatActivity {
 
         //Adapter
        adapter = new PlanetAdapter(planetsArrayList, getApplicationContext());
+       listView.setAdapter(adapter);
 
+
+       // Handling Click Events
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Planets.this,
+                        "Planet Name: " + adapter.getItem(position).getPlanetName(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

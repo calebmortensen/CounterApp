@@ -20,7 +20,7 @@ private ArrayList<Planet> planetArrayList;
 Context context;
 
     public PlanetAdapter(ArrayList<Planet> planetArrayList, Context context) {
-        super(context, R.layout.activity_planets, planetArrayList);
+        super(context, R.layout.planetlayout, planetArrayList);
         this.planetArrayList = planetArrayList;
         this.context = context;
     }
@@ -35,10 +35,10 @@ Context context;
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-       //Get planet object current position
+       //1. Get planet object current position
         Planet planet = getItem(position);
 
-        // Inflate layout
+        //2.  Inflate layout
         MyViewHolder myViewHolder;
         final View result;
 
@@ -46,7 +46,7 @@ Context context;
             myViewHolder = new MyViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(
-                    R.layout.activity_planets,
+                    R.layout.planetlayout,
                     parent,
                     false
             );
