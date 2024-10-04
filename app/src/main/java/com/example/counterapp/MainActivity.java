@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser, nvgFourth, frenchteacher, planets;
+    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser, nvgFourth, frenchteacher, planets, volume;
     int counter = 0;
     CheckBox checkBox;
     RadioGroup radioGroup;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         nvgFourth = findViewById(R.id.nvgFourth);
         frenchteacher = findViewById(R.id.frenchteacher);
         planets = findViewById(R.id.planets);
+        volume = findViewById(R.id.volume);
 
 
 
@@ -129,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {planets(); }
         });
 
+        volume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {volume(); }
+        });
+
         openBrowser.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -195,6 +201,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void planets() {
         Intent intent = new Intent(this, Planets.class);
+        startActivity(intent);
+    }
+
+    public void volume() {
+        Intent intent = new Intent(this, VolumeArea.class);
         startActivity(intent);
     }
 

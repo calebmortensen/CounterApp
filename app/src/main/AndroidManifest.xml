@@ -15,6 +15,12 @@
         android:theme="@style/Theme.CounterApp"
         tools:targetApi="31">
         <activity
+            android:name=".VolumeArea"
+            android:exported="false" />
+        <activity
+            android:name=".VolumeActivity"
+            android:exported="false" />
+        <activity
             android:name=".Planets"
             android:exported="false" />
         <activity
