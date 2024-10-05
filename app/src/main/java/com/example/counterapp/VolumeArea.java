@@ -1,6 +1,9 @@
 package com.example.counterapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,14 +16,13 @@ import java.util.ArrayList;
 
 public class VolumeArea extends AppCompatActivity {
 
-//1. AdapterView: GridView
+    //1. AdapterView: GridView
     GridView gridView;
 
     //2. Data Source: ArrayList<Shape>
     ArrayList<Shape> shapeArrayList;
-//3. Adapter: VolumeAdapter
+    //3. Adapter: VolumeAdapter
     VolumeAdapter adapter;
-
 
 
     @Override
@@ -48,9 +50,14 @@ public class VolumeArea extends AppCompatActivity {
         gridView.setAdapter(adapter);
         gridView.setNumColumns(2);
 
-
-
-        };
+/*        gridView.setOnClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent i = new Intent(getApplicationContext(), Sphere.class);
+            startActivity(i);
+            }
+        });*/
 
 
     }
+}
