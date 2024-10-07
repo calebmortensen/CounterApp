@@ -126,12 +126,13 @@
         android:id="@+id/nvg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
         android:layout_marginBottom="16dp"
         android:text="Navigate to Second Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/justAbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/nvgFourth" />
 
     <Button
         android:id="@+id/nvgFourth"
@@ -232,16 +233,30 @@
 
     <Button
         android:id="@+id/volume"
-        android:text="Volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="113dp"
+        android:text="Volume"
         app:layout_constraintBottom_toTopOf="@+id/nvgFourth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+
+    <Button
+        android:id="@+id/market"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="51dp"
+        android:text="Market"
+        app:layout_constraintBottom_toTopOf="@+id/nvgFourth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/volume" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

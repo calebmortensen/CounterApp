@@ -14,9 +14,20 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
 
     private List<MarketItem> itemList;
 
+    public MarketItemClickListener marketItemClickListener;
+
+    public void setMarketItemClickListener(MarketItemClickListener myListener){
+        this.marketItemClickListener = myListener;
+    }
+
+
+
     public MarketAdapter(List<MarketItem> itemList) {
         this.itemList = itemList;
     }
+
+
+
 
     @NonNull
     @Override
@@ -45,8 +56,8 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
     }
 
 
-    public static class MarketViewHolder extends RecyclerView.ViewHolder{
-
+    public class MarketViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+            //Holds references to the views within the item layout
         ImageView imageView;
         TextView title;
         TextView description;
@@ -57,8 +68,17 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketView
         imageView = itemView.findViewById(R.id.marketimage);
         title = itemView.findViewById(R.id.markettitle);
         description = itemView.findViewById(R.id.marketdescription);
+
+
+        itemView.setOnClickListener(this);
     }
 
-}
+        @Override
+        public void onClick(View v) {
+            if(marketItemClickListener != null){
+                marketItemClickListener.onClick(v, getAdapterPosition());
+            }
+        }
+    }
 
 }

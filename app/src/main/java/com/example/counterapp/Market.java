@@ -1,19 +1,22 @@
 package com.example.counterapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Market extends AppCompatActivity {
+public class Market extends AppCompatActivity implements MarketItemClickListener{
 
 
     RecyclerView recyclerView;
@@ -45,17 +48,27 @@ public class Market extends AppCompatActivity {
              itemList.add(item5);
              itemList.add(item6);
 
+             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+             recyclerView.setLayoutManager(layoutManager);
+
+
+
+
+
+
+
+
              marketAdapter = new MarketAdapter(itemList);
              recyclerView.setAdapter(marketAdapter);
 
 
+                marketAdapter.setMarketItemClickListener(this);
 
 
+        }
 
-        };
-
-
-
-
+    @Override
+    public void onClick(View v, int pos) {
+        Toast.makeText(this, "You Chose: "+ itemList.get(pos).getItemName(), Toast.LENGTH_SHORT).show();
     }
 }

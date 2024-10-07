@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText convertertext;
     TextView textView, counter_text, unitconverter_text;
-    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser, nvgFourth, frenchteacher, planets, volume;
+    Button btn, btn_converter, btn_converter_clear, btn_dec, nvg, openBrowser, nvgFourth, frenchteacher, planets, volume, market;
     int counter = 0;
     CheckBox checkBox;
     RadioGroup radioGroup;
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         frenchteacher = findViewById(R.id.frenchteacher);
         planets = findViewById(R.id.planets);
         volume = findViewById(R.id.volume);
+        market = findViewById(R.id.market);
 
 
 
@@ -135,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {volume(); }
         });
 
+        market.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {market(); }
+        });
+
         openBrowser.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -186,6 +192,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void market() {
+        Intent intent = new Intent(this, Market.class);
         startActivity(intent);
     }
 
